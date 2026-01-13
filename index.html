@@ -23,7 +23,7 @@
 *{
   margin:0;
   padding:0;
-  box-sizing:border-box-box;
+  box-sizing:border-box;
 }
 html{
   scroll-behavior:smooth;
@@ -55,8 +55,8 @@ h1{
   animation:pulse 2s infinite;
 }
 @keyframes pulse{
-  0%,100% scale(1)
-  50% scale(1.02)
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.02)}
 }
 h2{
   font-size:clamp(1.8em,4vw,3em);
@@ -113,26 +113,16 @@ header::before{
   left:0;
   width:100%;
   height:100%;
-  background:url('data:image/svg+xml,%3Csvg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="f"%3E%3CfeTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23f)" opacity=".1"/%3E%3C/svg%3E'),var(--dark2);
+  background:url('data:image/svg+xml,%3Csvg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="f"%3E%3CfeTurbulence type="fractalNoise" baseFrequency=".8" num octaves="4" stitchTiles="stitch"/3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23f)" opacity=".1"/%3E%3C/svg%3E'),var(--dark2);
   animation:glitch 4s infinite;
   z-index:0;
 }
 @keyframes glitch{
-  0%,100%{
-    transform:translate(0)
-  }
-  20%{
-n    transform:translate(-2px,2px)
-  }
-  40%{
-    transform:translate(-2px,-2px)
-  }
-  60%{
-    transform:translate(2px,2px)
-  }
-  80%{
-    transform:translate(2px,-2px)
-  }
+  0%,100%{transform:translate(0)}
+  20%{transform:translate(-2px,2px)}
+  40%{transform:translate(-2px,-2px)}
+  60%{transform:translate(2px,2px)}
+  80%{transform:translate(2px,-2px)}
 }
 .header-content{
   position:relative;
@@ -146,7 +136,7 @@ n    transform:translate(-2px,2px)
 .timer{
   font-family:'JetBrains Mono',monospace;
   font-size:1.5em;
-  font-weight:900;
+  font-weight:700;
   color:var(--neon);
   margin-top:10px;
 }
@@ -209,13 +199,19 @@ footer{
   color:#666;
 }
 @media(max-width:600px){
-  h1{
-    font-size:2.4em
-  }
-  .btn{
-    width:90%;
-    padding:18px 0
-  }
+  h1{font-size:2.4em}
+  .btn{width:90%;padding:18px 0}
+}
+
+/* ===== ÁREA DA IMAGEM SOBRE O TÍTULO ===== */
+.hero-image{
+  width:100%;
+  max-width:600px;          /* ajuste o tamanho que quiser */
+  height:auto;
+  display:block;
+  margin:0 auto 30px;       /* centraliza e dá espaço antes do título */
+  border-radius:12px;
+  box-shadow:0 0 30px rgba(0,0,0,.6);
 }
 </style>
 </head>
@@ -223,95 +219,100 @@ footer{
 
 <header>
 <div class="header-content">
-<h1>ASTEROIDE BLACK</h1>
-<p class="sub">A máquina de atestados que desafia a realidade.<br>Gera PDF oficial em 7 segundos — sem app, sem cadastro, sem rastro.</p>
-<a href="#comprar" class="btn">COMPRAR AGORA POR R$ 29,90</a>
+  <!-- COLE AQUI O LINK DA SUA IMAGEM -->
+  <img src="asteroide-black.png" alt="Asteróide Black" class="hero-image">
+
+  
+  <h1>ASTEROíde BLACK</h1>
+  <p class="sub">A máquina de atestados que desafia a realidade.<br>Gera PDF oficial em 7 segundos — sem app, sem cadastro, sem rastro.</p>
+  <a href="#comprar" class="btn">COMPRAR AGORA POR R$ 29,90</a>
 </div>
 </header>
 
+<!-- (resto do conteúdo igual ao anterior) -->
 <section>
 <div class="container">
-<h2>Por que isso funciona?</h2>
-<div class="grid">
-<div class="card">
-<h3>1. QR Code Verdadeiro</h3>
-<p>Cada atestado gera QR válido que aponta para consulta pública. RH escaneia e bateu.</p>
-</div>
-<div class="card">
-<h3>2. Assinatura Digital Viva</h3>
-<p>Sistema puxa certificado médico ativo em tempo real. Nenhum pixel fora do lugar.</p>
-</div>
-<div class="card">
-<h3>3. Troca de IP Automática</h3>
-<p>Seu acesso passa por 3 países antes de gerar o arquivo. Impossível rastrear.</p>
-</div>
-<div class="card">
-<h3>4. Modelos SUS + Privado</h3>
-<p>Escolha entre 12 layouts reais: SUS, HCFMUSP, Einstein, etc. Tudo idêntico.</p>
-</div>
-<div class="card">
-<h3>5. Até 5 Dias Seguidos</h3>
-<p>Define quantidade e sistema randomiza CID, data e médico. Folga longa sem peso.</p>
-</div>
-<div class="card">
-<h3>6. Modo Furtivo</h3>
-<p>Apaga logs, cookies, IP, user-agent. Nem a NSA encontra rastro.</p>
-</div>
-</div>
+  <h2>Por que isso funciona?</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>1. QR Code Verdadeiro</h3>
+      <p>Cada atestado gera QR válido que aponta para consulta pública. RH escaneia e bateu.</p>
+    </div>
+    <div class="card">
+      <h3>2. Assinatura Digital Viva</h3>
+      <p>Sistema puxa certificado médico ativo em tempo real. Nenhum pixel fora do lugar.</p>
+    </div>
+    <div class="card">
+      <h3>3. Troca de IP Automática</h3>
+      <p>Seu acesso passa por 3 países antes de gerar o arquivo. Impossível rastrear.</p>
+    </div>
+    <div class="card">
+      <h3>4. Modelos SUS + Privado</h3>
+      <p>Escolha entre 12 layouts reais: SUS, HCFMUSP, Einstein, etc. Tudo idêntico.</p>
+    </div>
+    <div class="card">
+      <h3>5. Até 5 Dias Seguidos</h3>
+      <p>Define quantidade e sistema randomiza CID, data e médico. Folga longa sem peso.</p>
+    </div>
+    <div class="card">
+      <h3>6. Modo Furtivo</h3>
+      <p>Apaga logs, cookies, IP, user-agent. Nem a NSA encontra rastro.</p>
+    </div>
+  </div>
 </div>
 </section>
 
 <section style="background:var(--dark2)">
 <div class="container">
-<h2>Black Friday Suicida – 90% OFF</h2>
-<div class="oferta">
-<s style="opacity:.5">De R$ 299</s><br>
-<span class="timer">R$ 29,90</span><br>
-<small>pagamento único • vida toda • atualizações grátis</small>
-</div>
-<p style="margin-top:15px">⏳ Quando zerar o timer o preço some para sempre.</p>
-<p class="timer" id="timer"></p>
-</div>
-</section>
-
-<section>
-<div class="container">
-<h2>O que tão falando por aí</h2>
-<div class="aval">
-<div class="balao">“Consegui 3 dias seguidos sem olharem na cara. Valeu demais.”<br><b>— Marcia, telemarketing</b></div>
-<div class="balao">“Parecia bruxaria: assinatura digital e pronto. RH aceitou de boa.”<br><b>— Diego, estoquista</b></div>
-<div class="balao">“Paguei menos que um lanche e salvei minha sanidade. 10/10”<br><b>— Jéssica, back-office</b></div>
-<div class="balao">“Gerou até QR Code válido. Chefe escaneou e falou ‘descansa aí’. Sensacional.”<br><b>— Robson, logística</b></div>
-</div>
+  <h2>Black Friday Suicida – 90% OFF</h2>
+  <div class="oferta">
+    <s style="opacity:.5">De R$ 299</s><br>
+    <span class="timer">R$ 29,90</span><br>
+    <small>pagamento único • vida toda • atualizações grátis</small>
+  </div>
+  <p style="margin-top:15px">⏳ Quando zerar o timer o preço some para sempre.</p>
+  <p class="timer" id="timer"></p>
 </div>
 </section>
 
 <section>
 <div class="container">
-<h2>Perguntas que ninguém faz mas a gente responde</h2>
-<div style="max-width:700px;margin:auto;text-align:left">
-<p><strong>Preciso instalar algo?</strong><br>Nada. É web-based, roda até no 3G do seu avó.</p>
-<p><strong>Funciona no celular?</strong><br>Perfeito em iOS, Android, KaiOS e até no Kindle.</p>
-<p><strong>E se o RH ligar no hospital?</strong><br>Sistema confirma registro do médico no CRM ativo. Liga o quanto quiser.</p>
-<p><strong>Posso usar quantas vezes quiser?</strong><br>Sim. Compra uma vez e usa pra sempre. Sem limite.</p>
-</div>
+  <h2>O que tão falando por aí</h2>
+  <div class="aval">
+    <div class="balao">“Consegui 3 dias seguidos sem olharem na cara. Valeu demais.”<br><b>— Marcia, telemarketing</b></div>
+    <div class="balao">“Parecia bruxaria: assinatura digital e pronto. RH aceitou de boa.”<br><b>— Diego, estoquista</b></div>
+    <div class="balao">“Paguei menos que um lanche e salvei minha sanidade. 10/10”<br><b>— Jéssica, back-office</b></div>
+    <div class="balao">“Gerou até QR Code válido. Chefe escaneou e falou ‘descansa aí’. Sensacional.”<br><b>— Robson, logística</b></div>
+  </div>
 </div>
 </section>
 
 <section>
 <div class="container">
-<div class="garantia">
-<h3>Garantia Asteróide</h3>
-<p>Se em 7 dias você não conseguir folga ou o RH desconfiar, devolvemos 100% do dinheiro. Só mandar um “quero” no WhatsApp.</p>
+  <h2>Perguntas que ninguém faz mas a gente responde</h2>
+  <div style="max-width:700px;margin:auto;text-align:left">
+    <p><strong>Preciso instalar algo?</strong><br>Nada. É web-based, roda até no 3G do seu avó.</p>
+    <p><strong>Funciona no celular?</strong><br>Perfeito em iOS, Android, KaiOS e até no Kindle.</p>
+    <p><strong>E se o RH ligar no hospital?</strong><br>Sistema confirma registro do médico no CRM ativo. Liga o quanto quiser.</p>
+    <p><strong>Posso usar quantas vezes quiser?</strong><br>Sim. Compra uma vez e usa pra sempre. Sem limite.</p>
+  </div>
 </div>
+</section>
+
+<section>
+<div class="container">
+  <div class="garantia">
+    <h3>Garantia Asteróide</h3>
+    <p>Se em 7 dias você não conseguir folga ou o RH desconfiar, devolvemos 100% do dinheiro. Só mandar um “quero” no WhatsApp.</p>
+  </div>
 </div>
 </section>
 
 <section id="comprar">
 <div class="container">
-<h2>Última chance de hoje</h2>
-<p>Depois que o contador zerar o preço sobe pra 299 e some do ar. Não existe segundo tiro.</p>
-<a href="https://pay.kiwify.com.br/black-asteroide" class="btn">COMPRAR ASTEROIDE – R$ 29,90</a>
+  <h2>Última chance de hoje</h2>
+  <p>Depois que o contador zerar o preço sobe pra 299 e some do ar. Não existe segundo tiro.</p>
+  <a href="https://pay.kiwify.com.br/black-asteroide" class="btn">COMPRAR ASTEROIDE – R$ 29,90</a>
 </div>
 </section>
 
