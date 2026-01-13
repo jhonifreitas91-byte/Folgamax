@@ -2,14 +2,16 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>ASTEROIDE BLACK – R$29,90 só hoje</title>
+<title>ASTEROIDE BLACK – R$ 29,90 só hoje</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
 :root{--neon:#ff0055;--bg:#0a0a0a;--card:#111}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:var(--bg);color:#fff;line-height::1.4}
+body{background:var(--bg);color:#fff;line-height:1.4;overflow-x:hidden}
 a{text-decoration:none}
-header{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px;background:url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='.1'/%3E%3C/svg%3E"),var(--bg)}
+header{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px;background:url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='.1'/%3E%3C/svg%3E"),var(--bg);animation:flicker 4s infinite}
+@keyframes flicker{0%,100%{filter:brightness(1)}50%{filter:brightness(1.05)}}
 h1{font-size:clamp(2em,10vw,5em);font-weight:900;background:linear-gradient(45deg,var(--neon),#ffff00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.05em}
 .sub{font-size:1.2em;margin:20px 0 30px;color:#aaa}
 .btn{display:inline-block;padding:20px 50px;font-size:1.3em;font-weight:900;background:var(--neon);color:#fff;border-radius:40px;box-shadow:0 0 30px var(--neon);transition:.3s}
@@ -20,8 +22,8 @@ h1{font-size:clamp(2em,10vw,5em);font-weight:900;background:linear-gradient(45de
 section{padding:80px 20px;text-align:center}
 h2{font-size:2.2em;margin-bottom:30px;color:var(--neon)}
 .grid{display:grid;gap:30px;max-width:1000px;margin:auto;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.card{background:var(--card);border:1px solid #222;border-radius:15px;padding:30px;box-shadow:0 0 20px #0003}
-.card h3{color:var(--neon);margin-bottom:15px;font-size::1.3em}
+.card{background:var(--card);border:1px solid #222;border-radius:15px;padding:30px;box-shadow:0 0 20px #0003;transition:transform .3s}
+.card:hover{transform:translateY(-10px)}
 .oferta{background:var(--neon);color:#000;font-size:2.4em;padding:40px 20px;border-radius:20px;margin:30px auto;max-width:600px;box-shadow:0 0 40px var(--neon)}
 .timer{font-size:1.5em;font-weight:900}
 .garantia{background:#181818;border-left:5px solid #00ff88;padding:20px;margin:30px auto;max-width:600px;border-radius:8px}
@@ -36,16 +38,16 @@ footer{padding:30px;font-size:.8em;color:#666}
 <header>
 <h1>ASTEROIDE BLACK</h1>
 <p class="sub">A máquina de atestados que desafia a realidade.<br>Gera PDF oficial em 7 segundos — sem app, sem cadastro, sem rastro.</p>
-<a href="#comprar" class="btn">COMPRAR AGORA POR R$29,90</a>
+<a href="#comprar" class="btn">COMPRAR AGORA POR R$ 29,90</a>
 <div class="barba"></div>
 </header>
 
 <section>
-<h2>Por que diabos isso funcenda?</h2>
+<h2>Por que isso funciona?</h2>
 <div class="grid">
 <div class="card">
 <h3>1. QR Code Verdadeiro</h3>
-<p>Cada atestado gera QR válido que apont para consulta pública. RH escaneia e bateu.</p>
+<p>Cada atestado gera QR válido que aponta para consulta pública. RH escaneia e bateu.</p>
 </div>
 <div class="card">
 <h3>2. Assinatura Digital Viva</h3>
@@ -53,7 +55,7 @@ footer{padding:30px;font-size:.8em;color:#666}
 </div>
 <div class="card">
 <h3>3. Troca de IP Automática</h3>
-<p>Seu acesso passa por 3 países antes de gerar o arquivo. Impossível rastrear.</p>
+<p>Seuua acesso passa por 3 países antes de gerar o arquivo. Impossível rastrear.</p>
 </div>
 <div class="card">
 <h3>4. Modelos SUS + Privado</h3>
@@ -77,7 +79,7 @@ footer{padding:30px;font-size:.8em;color:#666}
 <span class="timer">R$ 29,90</span><br>
 <small>pagamento único • vida toda • atualizações grátis</small>
 </div>
-<p style="margin-top:15px">⏷ Quando zerar o timer o preço some para sempre.</p>
+<p style="margin-top:15px">⏳ Quando zerar o timer o preço some para sempre.</p>
 <p class="timer" id="timer"></p>
 </section>
 
@@ -85,14 +87,14 @@ footer{padding:30px;font-size:.8em;color:#666}
 <h2>O que tão falando por aí</h2>
 <div class="aval">
 <div class="balao">“Consegui 3 dias seguidos sem olharem na cara. Valeu demais.”<br><b>— Marcia, telemarketing</b></div>
-<div class="balao">“Parecia bruxaria: assino digital e pronto. RH aceitou de boa.”<br><b>— Diego, estoquista</b></div>
+<div class="balao">“Parecia bruxaria: assinatura digital e pronto. RH aceitou de boa.”<br><b>— Diego, estoquista</b></div>
 <div class="balao">“Paguei menos que um lanche e salvei minha sanidade. 10/10”<br><b>— Jéssica, back-office</b></div>
 <div class="balao">“Gerou até QR Code válido. Chefe escaneou e falou ‘descansa aí’. Sensacional.”<br><b>— Robson, logística</b></div>
 </div>
 </section>
 
 <section>
-<h2>Perguntas que ninguém faz mas a gente respona</h2>
+<h2>Perguntas que ninguém faz mas a gente responde</h2>
 <div style="max-width:700px;margin:auto;text-align:left">
 <p><strong>Preciso instalar algo?</strong><br>Nada. É web-based, roda até no 3G do seu avó.</p>
 <p><strong>Funciona no celular?</strong><br>Perfeito em iOS, Android, KaiOS e até no Kindle.</p>
@@ -111,7 +113,7 @@ footer{padding:30px;font-size:.8em;color:#666}
 <section id="comprar">
 <h2>Última chance de hoje</h2>
 <p>Depois que o contador zerar o preço sobe pra 299 e some do ar. Não existe segundo tiro.</p>
-<a href="https://pay.kiwify.com.br/black-asteroide" class="btn">COMPRAR ASTEROIDE – R$29,90</a>
+<a href="https://pay.kiwify.com.br/black-asteroide" class="btn">COMPRAR ASTEROIDE – R$ 29,90</a>
 </section>
 
 <footer>
@@ -120,7 +122,7 @@ footer{padding:30px;font-size:.8em;color:#666}
 
 <script>
 let s=900,t=document.getElementById('timer');
-setInterval(()=>{let m=String(Math.floor(s/60)).padStart(2,0),seg=String(s%60).padStart(2,0);t.textContent=`${m}:${seg}`;ifs>0)s--;},1000);
+setInterval(()=>{let m=String(Math.floor(s/60)).padStart(2,0),seg=String(s%60).padStart(2,0);t.textContent=`${m}:${seg}`;if(s>0)s--;},1000);
 </script>
 </body>
 </html>
